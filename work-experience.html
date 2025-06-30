@@ -13,7 +13,7 @@
       body {
         font-family: "Segoe UI", sans-serif;
         background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
-        color: #333;
+        color: #616161;
         min-height: 100vh;
       }
 
@@ -33,24 +33,36 @@
       }
 
       .btn-custom {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         background-color: #009ccc;
         color: #ffffff;
-        padding: 10px 18px;
+        padding: 12px 24px;
         font-size: 16px;
         border: none;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px #dadada;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 156, 204, 0.3);
         text-decoration: none;
-        transition: background-color 0.3s ease, transform 0.1s;
+        transition: all 0.3s ease;
+        transform: translateY(0);
       }
 
       .btn-custom:hover {
-        background-color: #0069d9;
-        color: #fff;
+        background-color: #007ca3;
+        color: #ffffff;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgb(90, 206, 241);
+      }
+
+      .btn-custom:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem #007ca3;
       }
 
       .btn-custom:active {
-        transform: scale(0.96);
+        transform: scale(0.97);
+        box-shadow: 0 4px 10px #7be0ff;
       }
 
       .section h1 {
@@ -63,7 +75,7 @@
       }
 
       .section h1 i {
-        color: #7f44f7;
+        color: #009ccc;
         font-size: 1.8rem;
       }
 

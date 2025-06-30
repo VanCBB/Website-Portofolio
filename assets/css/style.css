@@ -647,12 +647,13 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Ini penting */
+  align-items: center;
   row-gap: 30px;
   background: #f8f8f8;
-  padding-block: 40px 60px;
-  text-align: center; /* Tambahan */
+  padding-block: 40px 20px; /* ← ganti dari 40px 60px */
+  text-align: center;
   width: 100%;
+  margin-bottom: 0 !important; /* ← tambahkan ini */
 }
 
 .footer-menu {
@@ -802,4 +803,13 @@ footer {
 a.btn,
 a.btn:hover {
   text-decoration: none;
+}
+
+body {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.section:last-child {
+  padding-bottom: 2em !important;
 }
