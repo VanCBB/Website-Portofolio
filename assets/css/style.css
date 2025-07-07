@@ -362,6 +362,9 @@ h3 {
   gap: 20px;
   margin-top: 20px;
 }
+.education-title {
+  text-align: center;
+}
 
 .education-item {
   display: flex;
@@ -371,6 +374,10 @@ h3 {
   padding: 15px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.education-details {
+  text-align: left;
 }
 
 .education-item .icon {
