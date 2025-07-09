@@ -343,7 +343,7 @@ h3 {
 }
 
 .about-info p {
-  text-align: center;
+  text-align: left;
   font-size: 15px;
   color: #777;
 }
@@ -819,4 +819,40 @@ body {
 
 .section:last-child {
   padding-bottom: 2em !important;
+}
+
+.fancy-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.fancy-skill-list span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f3f4f6;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.fancy-skill-list span i {
+  font-size: 16px;
+  color: var(--first-color);
+}
+
+.fancy-skill-list span:hover {
+  background-color: var(--first-color);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.fancy-skill-list span:hover i {
+  color: #fff;
 }
