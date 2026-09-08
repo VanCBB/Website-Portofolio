@@ -1,258 +1,707 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Evan Setyawanta Sitepu — Informatics student at President University. Portfolio showcasing web development, IT support, and cybersecurity projects." />
+    <meta name="author" content="Evan Setyawanta Sitepu" />
+    <meta name="keywords" content="Evan Setyawanta, portfolio, web developer, IT support, cybersecurity, informatics" />
 
-    <!-- --------- UNICONS ---------- -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Evan Setyawanta Sitepu | Developer Portfolio" />
+    <meta property="og:description" content="Informatics student passionate about web development, IT support, and cybersecurity." />
+    <meta property="og:type" content="website" />
 
-    <!-- --------- CSS ---------- -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Evan Setyawanta Sitepu | Developer Portfolio</title>
 
-    <!-- --------- FAVICON ---------- -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/logo van-oval.png" type="image/x-icon" />
 
-    <title>Portfolio | Evan Setyawanta Sitepu</title>
+    <!-- Icons: Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- --------------- HEADER --------------- -->
-      <nav id="header">
-        <div class="nav-logo">
-          <p class="nav-name">EVAN</p>
-          <span>.</span>
-        </div>
-        <div class="nav-menu" id="myNavMenu">
-          <ul class="nav_menu_list">
-            <li class="nav_list">
-              <a href="#home" class="nav-link active-link">Home</a>
-              <div class="circle"></div>
-            </li>
-            <li class="nav_list">
-              <a href="#about" class="nav-link">About Me</a>
-              <div class="circle"></div>
-            </li>
-            <li class="nav_list">
-              <a href="#projects" class="nav-link">Portfolio</a>
-              <div class="circle"></div>
-            </li>
-            <li class="nav_list">
-              <a href="#contact" class="nav-link">Contact</a>
-              <div class="circle"></div>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-menu-btn"><i class="uil uil-bars" onclick="myMenuFunction()"></i></div>
-      </nav>
 
-      <!-- -------------- MAIN ---------------- -->
-      <main class="wrapper">
-        <!-- -------------- FEATURED BOX ---------------- -->
-        <section class="featured-box" id="home">
-          <div class="featured-text">
-            <div class="featured-text-card"><span>Evan Setyawanta Sitepu</span></div>
-            <div class="featured-name">
-              <p>I'm <span class="typedText"></span></p>
-            </div>
-            <div class="featured-text-info">
-              <p>Informatics student at President University, ready to work in the IT industry with experience in IT support, multimedia, and cybersecurity.</p>
-            </div>
-            <div class="featured-text-btn">
-              <a href="https://www.linkedin.com/in/evan-setyawanta-sitepu-67352428a/" target="_blank" class="btn blue-btn">Hire Me</a>
-              <a href="assets/Evan Setyawanta Sitepu-CV.pdf" download class="btn">Download CV <i class="uil uil-file-alt"></i></a>
-            </div>
-            <div class="social_icons">
-              <a href="https://instagram.com/evan_awanta" target="_blank" class="icon"><i class="uil uil-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/evan-setyawanta-sitepu-67352428a/" target="_blank" class="icon"><i class="uil uil-linkedin-alt"></i></a>
-              <a href="https://github.com/VanCBB/Website-Portofolio" target="_blank" class="icon"><i class="uil uil-github-alt"></i></a>
-            </div>
-          </div>
-          <div class="featured-image">
-            <div class="image"><img src="assets/foto pu evan.png" alt="avatar" /></div>
-          </div>
-          <div class="scroll-icon-box">
-            <a href="#about" class="scroll-btn"
-              ><i class="uil uil-mouse-alt"></i>
-              <p>Scroll Down</p></a
-            >
-          </div>
-        </section>
+    <!-- =============================================
+         NAVIGATION BAR
+         ============================================= -->
+    <nav id="navbar" class="navbar">
+      <div class="nav-inner">
+        <a href="#home" class="nav-brand">EVAN.</a>
 
-        <!-- -------------- ABOUT BOX ---------------- -->
-        <section class="section" id="about">
-          <div class="top-header"><h1>About Me</h1></div>
-          <div class="row">
-            <div class="col">
-              <div class="about-info">
-                <h3 class="education-title">My Education 🎓</h3>
-                <div class="education-box">
-                  <div class="education-item">
-                    <div class="icon"><i class="uil uil-university"></i></div>
-                    <div class="education-details">
-                      <h4>President University</h4>
-                      <p class="edu-duration">Current <span class="highlight">Bachelor's Degree</span></p>
-                      <p>Major in Computer Science</p>
-                    </div>
-                  </div>
-                  <div class="education-item">
-                    <div class="icon"><i class="uil uil-building"></i></div>
-                    <div class="education-details">
-                      <h4>SMK Metland School</h4>
-                      <p class="edu-duration">2020 - 2023 <span class="highlight">High School Graduate</span></p>
-                      <p>Vocational High School in IT</p>
-                    </div>
-                  </div>
+        <!-- Desktop Menu -->
+        <ul class="nav-menu">
+          <li><a href="#home"       class="nav-link active" data-section="home">Home</a></li>
+          <li><a href="#about"      class="nav-link"        data-section="about">About</a></li>
+          <li><a href="#projects"   class="nav-link"        data-section="projects">Portfolio</a></li>
+          <li><a href="#skills"     class="nav-link"        data-section="skills">Skills</a></li>
+          <li><a href="#experience" class="nav-link"        data-section="experience">Experience</a></li>
+          <li><a href="#contact"    class="nav-link"        data-section="contact">Contact</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+            <!-- Moon icon (shown in light mode) -->
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+            <!-- Sun icon (shown in dark mode) -->
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <a href="assets/Evan Setyawanta Sitepu-CV.pdf" download class="btn btn-primary" style="font-size:13px;padding:10px 18px;">
+            <i class="uil uil-file-download-alt"></i> Download CV
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav-mobile" id="navMobile">
+      <a href="#home"       class="nav-link" data-section="home">Home</a>
+      <a href="#about"      class="nav-link" data-section="about">About</a>
+      <a href="#projects"   class="nav-link" data-section="projects">Portfolio</a>
+      <a href="#skills"     class="nav-link" data-section="skills">Skills</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#contact"    class="nav-link" data-section="contact">Contact</a>
+      <div class="nav-actions" style="padding-top:8px;">
+        <a href="assets/Evan Setyawanta Sitepu-CV.pdf" download class="btn btn-primary" style="font-size:14px;">
+          <i class="uil uil-file-download-alt"></i> Download CV
+        </a>
+      </div>
+    </div>
+
+    <!-- =============================================
+         HERO SECTION
+         ============================================= -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- Left: Content -->
+          <div class="hero-content">
+            <div class="hero-badge reveal">
+              Available for new opportunities
+            </div>
+
+            <h1 class="hero-title reveal">
+              Hi, I'm
+              <span class="name">Evan Setyawanta<br>Sitepu</span>
+            </h1>
+
+            <div class="hero-typed-wrap reveal">
+              I'm <span class="typedText"></span>
+            </div>
+
+            <p class="hero-desc reveal">
+              Informatics Graduate from President University (GPA 3.83/4.00) with expertise in
+              data preprocessing, AI risk assessment, PostgreSQL, SAP, and data-driven web app development.
+              Building practical solutions that make a real difference.
+            </p>
+
+            <div class="hero-cta reveal">
+              <a href="#projects" class="btn btn-primary">
+                View My Work <i class="uil uil-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                Contact Me
+              </a>
+            </div>
+
+            <div class="hero-socials reveal">
+              <span class="hero-socials-label">Follow me</span>
+              <a href="https://github.com/VanCBB/Website-Portofolio" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+                <i class="uil uil-github-alt"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/evan-setyawanta-sitepu-67352428a/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                <i class="uil uil-linkedin-alt"></i>
+              </a>
+              <a href="https://instagram.com/evan_awanta" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                <i class="uil uil-instagram"></i>
+              </a>
+              <a href="mailto:evansitepu04@gmail.com" class="social-icon" aria-label="Email">
+                <i class="uil uil-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Image -->
+          <div class="hero-image-wrap reveal-right">
+            <div class="hero-image-blob">
+              <img src="assets/foto pu evan.png" alt="Evan Setyawanta Sitepu — Profile Photo" />
+            </div>
+            <div class="hero-float-card">
+              <div class="card-icon">
+                <i class="uil uil-university"></i>
+              </div>
+              <div class="card-info">
+                <div class="card-title">Informatics Graduate</div>
+                <div class="card-sub">President Univ (IPK 3.83/4.00)</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         STATS BAR
+         ============================================= -->
+    <div class="stats-bar">
+      <div class="container">
+        <div class="stats-grid reveal stagger">
+
+          <div class="stat-item">
+            <div class="stat-num">3.83</div>
+            <div class="stat-label">IPK / GPA (Top 3)</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num">3×</div>
+            <div class="stat-label">Internship Experiences</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num">2026</div>
+            <div class="stat-label">Graduation Year</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num" style="-webkit-text-fill-color:initial;background:none;font-size:24px;">🎓</div>
+            <div class="stat-label">Jababeka Scholar</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================
+         ABOUT SECTION
+         ============================================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-inner">
+
+          <!-- Left: Image -->
+          <div class="about-image-wrap reveal-left">
+            <div class="about-image-frame">
+              <img src="assets/foto pu evan.png" alt="Evan Setyawanta Sitepu" />
+            </div>
+            <div class="about-image-deco"></div>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="about-content">
+            <span class="section-label">
+              <i class="uil uil-user-circle"></i> About Me
+            </span>
+            <h2 class="section-title reveal">
+              Passionate Developer &amp;<br>IT Enthusiast
+            </h2>
+            <p class="about-desc reveal">
+              I am an Informatics Graduate from President University (GPA 3.83/4.00, Ranked 3rd in batch, Jababeka Scholar).
+              I passed my thesis defense on August 18, 2026 on "AI-Powered Predictive Security Risk Analysis" for PT American Standard Indonesia (LIXIL Group).
+              I have hands-on experience in data preprocessing, data cleansing, dataset preparation, risk analysis (ISO 27001 / NIST SP 800-30), PostgreSQL, REST API, React.js, and SAP master data management.
+            </p>
+
+            <div class="about-highlights stagger reveal">
+              <span class="highlight-tag"><i class="uil uil-analytics"></i> Data &amp; Analytics</span>
+              <span class="highlight-tag"><i class="uil uil-shield-check"></i> AI Risk Analysis</span>
+              <span class="highlight-tag"><i class="uil uil-brackets-curly"></i> Frontend &amp; Web</span>
+              <span class="highlight-tag"><i class="uil uil-database"></i> SAP &amp; PostgreSQL</span>
+            </div>
+
+            <!-- Mini Timeline -->
+            <div class="timeline stagger reveal">
+              <div class="timeline-item">
+                <div class="timeline-dot"><i class="uil uil-university"></i></div>
+                <div class="timeline-body">
+                  <div class="timeline-title">President University</div>
+                  <div class="timeline-sub">S1 Informatics — Graduated (IPK 3.83/4.00, Peringkat 3)</div>
+                  <div class="timeline-period">2022 — 2026</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"><i class="uil uil-briefcase-alt"></i></div>
+                <div class="timeline-body">
+                  <div class="timeline-title">IT Support Intern</div>
+                  <div class="timeline-sub">PT American Standard Indonesia (LIXIL Group)</div>
+                  <div class="timeline-period">2025</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"><i class="uil uil-briefcase-alt"></i></div>
+                <div class="timeline-body">
+                  <div class="timeline-title">Frontend Developer Intern</div>
+                  <div class="timeline-sub">PT Sinergi Cahaya Utama Indah (Qutab)</div>
+                  <div class="timeline-period">2024</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"><i class="uil uil-briefcase-alt"></i></div>
+                <div class="timeline-body">
+                  <div class="timeline-title">Records Digitalization Intern</div>
+                  <div class="timeline-sub">PT Toyota Setiajaya Mobilindo</div>
+                  <div class="timeline-period">2023</div>
                 </div>
               </div>
             </div>
 
-          <div class="col">
-  <!-- Technical Skills -->
-  <div class="skills-box">
-    <div class="skills-header"><h3><i class="uil uil-brackets-curly"></i> Technical Skills</h3></div>
-    <div class="skills-list fancy-skill-list">
-      <span><i class="uil uil-html5"></i> HTML</span>
-      <span><i class="uil uil-css3-simple"></i> CSS</span>
-      <span><i class="uil uil-java-script"></i> JavaScript</span>
-      <span><i class="uil uil-database"></i> IT Support</span>
-      <span><i class="uil uil-python"></i> Python</span>
-      <span><i class="uil uil-pen"></i> Figma</span>
-      <span><i class="uil uil-github"></i> GitHub</span>
-    </div>
-  </div>
-
-  <!-- Soft Skills -->
-  <div class="skills-box">
-    <div class="skills-header"><h3><i class="uil uil-users-alt"></i> Soft Skills</h3></div>
-    <div class="skills-list fancy-skill-list">
-      <span><i class="uil uil-comment-alt-lines"></i> Communication</span>
-      <span><i class="uil uil-clock"></i> Time Management</span>
-      <span><i class="uil uil-user-arrows"></i> Collaboration</span>
-      <span><i class="uil uil-brain"></i> Problem Solving</span>
-      <span><i class="uil uil-repeat"></i> Adaptability</span>
-      <span><i class="uil uil-eye"></i> Attention to Detail</span>
-    </div>
-  </div>
-
-  <!-- Tools & Platforms -->
-  <div class="skills-box">
-    <div class="skills-header"><h3><i class="uil uil-wrench"></i> Tools & Platforms</h3></div>
-    <div class="skills-list fancy-skill-list">
-      <span><i class="uil uil-android"></i> Android Studio</span>
-      <span><i class="uil uil-visual-studio"></i> VS Code</span>
-      <span><i class="uil uil-palette"></i> Canva</span>
-      <span><i class="uil uil-file-info-alt"></i> SAP Business</span>
-      <span><i class="uil uil-linux"></i> Kali Linux</span>
-      <span><i class="uil uil-google"></i> Google Workspace</span>
-      <span><i class="uil uil-search"></i> Autopsy</span>
-    </div>
-  </div>
-</div>
-        </section>
-
-        <!-- -------------- PROJECT BOX ---------------- -->
-        <section class="section" id="projects">
-          <div class="top-header"><h1>Portfolio</h1></div>
-          <div class="project-container">
-            <a href="work-experience.html" class="project-box"
-              ><i class="uil uil-shield-check"></i>
-              <h3>Work Experience</h3>
-              <label>View Details</label></a
-            >
-            <a href="certificate.html" class="project-box"
-              ><i class="uil uil-browser"></i>
-              <h3>Certificate</h3>
-              <label>View Certificates</label></a
-            >
-            <a href="project.html" class="project-box"
-              ><i class="uil uil-sitemap"></i>
-              <h3>Project</h3>
-              <label>See Projects</label></a
-            >
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- -------------- CONTACT BOX ---------------- -->
-        <section class="section" id="contact">
-          <div class="top-header">
-            <h1>Contact Me</h1>
-            <span>If you'd like to collaborate or ask questions, feel free to reach out.</span>
+    <!-- =============================================
+         SKILLS SECTION
+         ============================================= -->
+    <section id="skills" class="section skills-bg">
+      <div class="container">
+        <div class="skills-header">
+          <span class="section-label"><i class="uil uil-layer-group"></i> Tech Stack</span>
+          <h2 class="section-title reveal">Skills &amp; Technologies</h2>
+          <p class="section-sub reveal">Tools and technologies I work with regularly</p>
+        </div>
+
+        <div class="skills-grid stagger">
+          <div class="skill-card reveal">
+            <div class="skill-icon">🐍</div>
+            <div class="skill-name">Python</div>
           </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">📊</div>
+            <div class="skill-name">Data Analytics</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">🐘</div>
+            <div class="skill-name">PostgreSQL</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">💼</div>
+            <div class="skill-name">SAP System</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">⚛️</div>
+            <div class="skill-name">React.js</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">⚡</div>
+            <div class="skill-name">JavaScript</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">📘</div>
+            <div class="skill-name">TypeScript</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">🤖</div>
+            <div class="skill-name">BERT / AI Models</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">🛡️</div>
+            <div class="skill-name">Risk Analysis (ISO 27001)</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">🔌</div>
+            <div class="skill-name">REST API</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">🛠️</div>
+            <div class="skill-name">IT Support</div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">🤝</div>
+            <div class="skill-name">Client Liaison</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="row">
-            <!-- Contact Info -->
-            <div class="col">
-              <div class="contact-info">
-                <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
-                <p><i class="uil uil-envelope"></i> Email: evansitepu04@gmail.com</p>
+    <!-- =============================================
+         PORTFOLIO / PROJECTS SECTION
+         ============================================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="projects-header">
+          <span class="section-label"><i class="uil uil-folder-open"></i> Portfolio</span>
+          <h2 class="section-title reveal">Things I've Built</h2>
+          <p class="section-sub reveal" style="margin:0 auto;">
+            A collection of my projects, work experience, and certifications
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Card 1: Capstone Thesis (featured) -->
+          <div class="project-card featured reveal-left">
+            <div class="project-img-wrap">
+              <img src="assets/AI Security Risk Analyzer 1 Web Portofolio.png?v=4" alt="AI-Powered Security Risk Analysis" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top center;" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">Capstone Thesis — AI-Powered Predictive Security Risk Analysis</p>
+              <p class="project-desc">
+                Developed an AI-driven security risk analysis platform for PT American Standard Indonesia (LIXIL Group).
+                Incorporated risk classification, data preparation, evaluation using BERT &amp; XLM-RoBERTa models,
+                and user-friendly dashboard visualization.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">AI / ML</span>
+                <span class="project-tag">ISO 27001</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">LIXIL Group</span>
+              </div>
+              <div class="project-footer" style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="https://ai-security-risk-analyzer.vercel.app/" target="_blank" rel="noopener" class="project-link">
+                  Visit Live Web App <i class="uil uil-external-link-alt"></i>
+                </a>
+                <a href="project.html" class="project-link" style="background:var(--surface-2);color:var(--text);border:1px solid var(--border);">
+                  View Details <i class="uil uil-arrow-right"></i>
+                </a>
               </div>
             </div>
+          </div>
 
-            <!-- Contact Form -->
-            <div class="col">
-              <form class="form-control" action="https://formsubmit.co/evansitepu04@gmail.com" method="POST">
-                <!-- Optional Settings for FormSubmit -->
-                <input type="hidden" name="_captcha" value="true" />
-
-                <!-- Input Fields -->
-                <div class="form-inputs">
-                  <input type="text" class="input-field" name="name" placeholder="Your Name" required />
-                  <input type="email" class="input-field" name="email" placeholder="Your Email" required />
-                </div>
-
-                <!-- Message Textarea -->
-                <div class="text-area">
-                  <textarea name="message" class="form-control" placeholder="Type your message here..." rows="10" required></textarea>
-                </div>
-
-
-                <!-- Submit Button -->
-                <div class="form-button">
-                  <button type="submit" class="btn btn-lg btn-dark btn-block">Send <i class="uil uil-message"></i></button>
-                </div>
-              </form>
+          <!-- Card 2: CashE Risk Assessment -->
+          <div class="project-card reveal">
+            <div class="project-img-wrap">
+              <img src="assets/cash e project.png" alt="IT Risk Assessment CashE Mobile App" loading="lazy" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">IT Risk Assessment — "CashE" Mobile App</p>
+              <p class="project-desc">
+                Risk assessment project for PT Square Gate One. Evaluated threat patterns, asset identification,
+                and mitigation recommendations based on ISO/IEC 27005:2018, OJK, BI, and PCI DSS compliance standards.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Risk Assessment</span>
+                <span class="project-tag">ISO 27005</span>
+                <span class="project-tag">OJK / PCI DSS</span>
+              </div>
+              <div class="project-footer">
+                <a href="project.html" class="project-link">
+                  View Details <i class="uil uil-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </div>
-        </section>
 
-        <!-- --------------- FOOTER --------------- -->
-        <footer>
-          <div class="top-footer"><p>Evan Setyawanta Sitepu</p></div>
-          <div class="middle-footer">
-            <ul class="footer-menu">
-              <li class="footer_menu_list"><a href="#home">Home</a></li>
-              <li class="footer_menu_list"><a href="#about">About</a></li>
-              <li class="footer_menu_list"><a href="#projects">Portfolio</a></li>
-              <li class="footer_menu_list"><a href="#contact">Contact</a></li>
+          <!-- Card 3: Work Experience -->
+          <div class="project-card reveal">
+            <div class="project-img-wrap">
+              <img src="assets/American Standart.jpg" alt="Work Experience" loading="lazy" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">Work Experience (3 Internships)</p>
+              <p class="project-desc">
+                Proven IT experience across 3 companies: PT American Standard Indonesia (LIXIL),
+                PT Sinergi Cahaya Utama Indah (Qutab), and PT Toyota Setiajaya Mobilindo.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">LIXIL Group</span>
+                <span class="project-tag">Qutab</span>
+                <span class="project-tag">Toyota</span>
+              </div>
+              <div class="project-footer">
+                <a href="work-experience.html" class="project-link">
+                  View Experiences <i class="uil uil-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Qutab / Qurban Tanpa Batas Frontend -->
+          <div class="project-card reveal">
+            <div class="project-img-wrap">
+              <img src="assets/Qutab web porto 1.jpg" alt="Qurban Tanpa Batas — PT Sinergi Cahaya Utama Indah" loading="lazy" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">Qurban Tanpa Batas &amp; Scalev.id Web App</p>
+              <p class="project-desc">
+                Developed affiliate dashboard, admin panel, referral system, dynamic pricing in React.js,
+                and built scalev.id mobile-first landing page at PT Sinergi Cahaya Utama Indah (Gedung SCUI).
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">React.js</span>
+                <span class="project-tag">Qurban Tanpa Batas</span>
+                <span class="project-tag">Dashboard</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://www.qurbantanpabatas.id/" target="_blank" rel="noopener" class="project-link">
+                  Visit Qurban Tanpa Batas <i class="uil uil-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Certifications -->
+          <div class="project-card reveal">
+            <div class="project-img-wrap">
+              <img src="assets/Mtcna Certificate.jpg" alt="Certifications" loading="lazy" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">Certifications &amp; Language</p>
+              <p class="project-desc">
+                PESC English Certification (Score 5.5, 2025), KKNI Level II Multimedia (BNSP),
+                EF English Conversation Certificate, and MTCNA.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">PESC 5.5</span>
+                <span class="project-tag">BNSP Multimedia</span>
+                <span class="project-tag">EF English</span>
+              </div>
+              <div class="project-footer">
+                <a href="certificate.html" class="project-link">
+                  View Certificates <i class="uil uil-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         WORK EXPERIENCE SECTION (INLINE)
+         ============================================= -->
+    <section id="experience" class="section skills-bg">
+      <div class="container">
+        <div class="projects-header">
+          <span class="section-label"><i class="uil uil-briefcase-alt"></i> Experience</span>
+          <h2 class="section-title reveal">Work Experience</h2>
+          <p class="section-sub reveal" style="margin:0 auto;">
+            Real-world IT experience from internships
+          </p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:24px;">
+
+          <!-- Exp 1 -->
+          <div class="project-card reveal" style="flex-direction:row;min-height:unset;">
+            <div class="project-img-wrap" style="flex:0 0 280px;aspect-ratio:unset;min-height:200px;">
+              <img src="assets/American Standart.jpg" alt="American Standard" loading="lazy" style="height:100%;object-fit:cover;" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">IT Support Intern</p>
+              <div class="project-tags" style="margin-bottom:10px;">
+                <span class="project-tag">PT American Standard Indonesia (LIXIL Group)</span>
+                <span class="project-tag">2025</span>
+              </div>
+              <p class="project-desc">
+                Contributed to AI Risk Analyzer (data preparation, model evaluation, risk classification),
+                PostgreSQL data management &amp; REST APIs, ISO/IEC 27001 &amp; NIST SP 800-30 compliance, and HTTPS/SSL troubleshooting across 5 departments.
+              </p>
+              <div class="project-footer">
+                <a href="work-experience.html" class="project-link">
+                  Full Details <i class="uil uil-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exp 2 -->
+          <div class="project-card reveal" style="flex-direction:row;min-height:unset;">
+            <div class="project-img-wrap" style="flex:0 0 280px;aspect-ratio:unset;min-height:200px;">
+              <img src="assets/Gedung SCUI.webp" alt="PT Sinergi Cahaya Utama Indah — Gedung SCUI" loading="lazy" style="height:100%;object-fit:cover;" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">Frontend Developer Intern</p>
+              <div class="project-tags" style="margin-bottom:10px;">
+                <span class="project-tag">PT Sinergi Cahaya Utama Indah (Qutab)</span>
+                <span class="project-tag">Gedung SCUI</span>
+                <span class="project-tag">2024</span>
+              </div>
+              <p class="project-desc">
+                Developed React.js web apps &amp; dashboards (affiliate, admin panel, referral system, dynamic pricing)
+                and built scalev.id as a mobile-first landing page. Prepared business flowcharts and system diagrams.
+              </p>
+              <div class="project-footer" style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="https://www.qurbantanpabatas.id/" target="_blank" rel="noopener" class="project-link">
+                  Qurban Tanpa Batas <i class="uil uil-external-link-alt"></i>
+                </a>
+                <a href="work-experience.html" class="project-link" style="background:var(--surface-2);color:var(--text);border:1px solid var(--border);">
+                  Full Details <i class="uil uil-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exp 3 -->
+          <div class="project-card reveal" style="flex-direction:row;min-height:unset;">
+            <div class="project-img-wrap" style="flex:0 0 280px;aspect-ratio:unset;min-height:200px;">
+              <img src="assets/sjm-cimanggis.jpg" alt="Toyota Setiajaya Mobilindo" loading="lazy" style="height:100%;object-fit:cover;" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-title">Records Digitalization Intern</p>
+              <div class="project-tags" style="margin-bottom:10px;">
+                <span class="project-tag">PT Toyota Setiajaya Mobilindo</span>
+                <span class="project-tag">2023</span>
+              </div>
+              <p class="project-desc">
+                Managed master data input and updates on SAP system, performed data cleansing &amp; validation,
+                and digitalized physical archives into SAP to improve data accessibility.
+              </p>
+              <div class="project-footer">
+                <a href="work-experience.html" class="project-link">
+                  Full Details <i class="uil uil-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         CONTACT SECTION
+         ============================================= -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+
+        <!-- CTA Banner -->
+        <div class="cta-banner reveal">
+          <h2 class="cta-title">Let's Build Something<br>Great Together</h2>
+          <p class="cta-sub">Have a project in mind or want to collaborate? Let's talk.</p>
+          <a href="mailto:evansitepu04@gmail.com" class="btn-cta">
+            Get in Touch <i class="uil uil-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Contact Grid -->
+        <div class="contact-grid">
+          <!-- Info Card -->
+          <div class="contact-info-card reveal-left">
+            <h3>Find Me</h3>
+            <p>Feel free to reach out for collaboration, questions, or just to say hi!</p>
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class="uil uil-envelope"></i></div>
+              <div class="contact-detail-text">evansitepu04@gmail.com</div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class="uil uil-phone"></i></div>
+              <div class="contact-detail-text">085771624181</div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class="uil uil-linkedin-alt"></i></div>
+              <div class="contact-detail-text">linkedin.com/in/evan-setyawanta-67352428a</div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class="uil uil-map-marker"></i></div>
+              <div class="contact-detail-text">Bogor, Jawa Barat, Indonesia</div>
+            </div>
+          </div>
+
+          <!-- Form Card -->
+          <div class="contact-form-card reveal-right">
+            <form action="https://formsubmit.co/evansitepu04@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="hidden" name="_subject" value="New message from portfolio" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="John Doe" required />
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Your Email</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="john@example.com" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" class="form-input" placeholder="Tell me about your project or question..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit">
+                Send Message <i class="uil uil-message"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Brand col -->
+          <div>
+            <div class="footer-brand">EVAN.</div>
+            <p class="footer-desc">
+              Informatics student passionate about technology, development, and cybersecurity.
+              Always building, always learning.
+            </p>
+            <div class="footer-socials">
+              <a href="https://github.com/VanCBB/Website-Portofolio" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">
+                <i class="uil uil-github-alt"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/evan-setyawanta-sitepu-67352428a/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+                <i class="uil uil-linkedin-alt"></i>
+              </a>
+              <a href="https://instagram.com/evan_awanta" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
+                <i class="uil uil-instagram"></i>
+              </a>
+              <a href="mailto:evansitepu04@gmail.com" class="footer-social" aria-label="Email">
+                <i class="uil uil-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nav col -->
+          <div>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Portfolio</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div class="footer-social-icons">
-          <a href="https://instagram.com/evan_awanta" target="_blank" class="icon">
-            <i class="uil uil-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/evan-setyawanta-sitepu-67352428a/" target="_blank" class="icon">
-            <i class="uil uil-linkedin-alt"></i>
-          </a>
-          <a href="https://github.com/VanCBB/Website-Portofolio" target="_blank" class="icon">
-            <i class="uil uil-github-alt"></i>
-          </a>
+
+          <!-- Links col -->
+          <div>
+            <div class="footer-col-title">Resources</div>
+            <ul class="footer-links">
+              <li><a href="assets/Evan Setyawanta Sitepu-CV.pdf" download>Download CV</a></li>
+              <li><a href="project.html">IT Projects</a></li>
+              <li><a href="certificate.html">Certificates</a></li>
+              <li><a href="work-experience.html">Work Experience</a></li>
+            </ul>
+          </div>
         </div>
-          </div>
-          <div class="bottom-footer">
-            <p>Copyright &copy; <a href="#home">Evan Sitepu</a> - All rights reserved</p>
-          </div>
-        </footer>
-      </main>
-    </div>
 
-    <!-- TYPING JS -->
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            &copy; 2026 <span>Evan Setyawanta Sitepu</span>. All rights reserved.
+          </p>
+          <p class="footer-copy">Built with ❤️ and dedication</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =============================================
+         SCRIPTS
+         ============================================= -->
+    <!-- Typed.js -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-    <!-- SCROLL REVEAL JS -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- MAIN JS -->
+    <!-- Main JS -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>
