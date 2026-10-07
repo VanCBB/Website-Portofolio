@@ -1,14 +1,6 @@
 {
-  "version": 2,
-  "buildCommand": null,
-  "installCommand": null,
-  "outputDirectory": ".",
-  "framework": null,
-  "rewrites": [
-    { "source": "/work-experience", "destination": "/work-experience.html" },
-    { "source": "/project", "destination": "/project.html" },
-    { "source": "/certificate", "destination": "/certificate.html" }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/assets/(.*)",

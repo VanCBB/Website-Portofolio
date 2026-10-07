@@ -15,15 +15,15 @@
   --accent-grad-h:  linear-gradient(135deg, #2563eb, #7c3aed);
 
   /* Backgrounds */
-  --bg:             #f8faff;
-  --bg-2:           #f0f4ff;
+  --bg:             #fcfcfc;
+  --bg-2:           #f1f5f9;
   --surface:        #ffffff;
-  --surface-2:      #f1f5f9;
+  --surface-2:      #e2e8f0;
 
   /* Text */
   --text:           #0f172a;
-  --text-muted:     #64748b;
-  --text-light:     #94a3b8;
+  --text-muted:     #475569;
+  --text-light:     #64748b;
   --text-inv:       #ffffff;
 
   /* Borders */
@@ -58,13 +58,13 @@
 
 /* ----- DARK MODE ----- */
 [data-theme="dark"] {
-  --bg:             #0a0f1e;
+  --bg:             #020617;
   --bg-2:           #0f172a;
   --surface:        #1e293b;
-  --surface-2:      #273549;
-  --text:           #f1f5f9;
-  --text-muted:     #94a3b8;
-  --text-light:     #64748b;
+  --surface-2:      #334155;
+  --text:           #f8fafc;
+  --text-muted:     #cbd5e1;
+  --text-light:     #94a3b8;
   --border:         rgba(148, 163, 184, 0.1);
   --border-accent:  rgba(59, 130, 246, 0.25);
   --shadow-sm:      0 1px 3px rgba(0,0,0,0.3);
@@ -90,7 +90,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background var(--transition), color var(--transition);
 }
 
@@ -681,9 +681,7 @@ button {
 
 .about-image-wrap {
   flex: 0 0 380px;
-  position: sticky;
-  top: 100px;
-  align-self: flex-start;
+  position: relative;
 }
 
 .about-image-frame {
@@ -2172,7 +2170,7 @@ footer {
 
 /* Prevent any horizontal scroll on all devices */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 .container {
