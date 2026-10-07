@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Work experience of Evan Setyawanta Sitepu — IT internships at American Standard Indonesia and Toyota Setiajaya Mobilindo." />
+    <meta name="description" content="Work experience of Evan Setyawanta Sitepu — UI/UX, Web Development, IT Support, AI Risk Analysis, and Administrative internships." />
     <title>Work Experience | Evan Setyawanta Sitepu</title>
 
     <!-- Favicon -->
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <style>
-      /* Sub-page specific overrides */
+      /* Sub-page nav */
       .subpage-nav {
         position: sticky;
         top: 0;
@@ -61,7 +61,7 @@
       }
 
       .exp-cards {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -85,20 +85,53 @@
       }
 
       .exp-image {
-        flex: 0 0 320px;
+        flex: 0 0 28%;
         overflow: hidden;
+        position: relative;
       }
       .exp-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        object-position: center;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        display: block;
       }
-      .exp-card:hover .exp-image img { transform: scale(1.05); }
+      /* No hover scale — prevents blur on lower-res images */
+
+      /* Placeholder image for non-photo experiences */
+      .exp-image-placeholder {
+        flex: 0 0 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 32px 24px;
+        min-height: 200px;
+      }
+      .exp-image-placeholder svg {
+        width: 52px;
+        height: 52px;
+        stroke: currentColor;
+        stroke-width: 1.5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.6;
+      }
+      .exp-image-placeholder span {
+        font-family: 'Outfit', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        opacity: 0.5;
+        text-align: center;
+      }
 
       .exp-body {
         padding: 36px 40px;
-        flex: 1;
+        flex: 0 0 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -122,7 +155,7 @@
 
       .exp-role {
         font-family: 'Outfit', sans-serif;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 800;
         color: var(--text);
         margin-bottom: 4px;
@@ -138,19 +171,68 @@
       .exp-period {
         font-size: 13px;
         color: var(--text-muted);
-        margin-bottom: 20px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
 
-      .exp-desc {
-        font-size: 15px;
+      .exp-category-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+
+      .exp-cat-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 3px 9px;
+        border-radius: var(--radius-full);
+        border: 1px solid transparent;
+      }
+
+      .exp-cat-tag.tag-uiux   { background: rgba(59,130,246,0.1);  color: #3b82f6; border-color: rgba(59,130,246,0.2); }
+      .exp-cat-tag.tag-web    { background: rgba(16,185,129,0.1);  color: #10b981; border-color: rgba(16,185,129,0.2); }
+      .exp-cat-tag.tag-ai     { background: rgba(139,92,246,0.1);  color: #8b5cf6; border-color: rgba(139,92,246,0.2); }
+      .exp-cat-tag.tag-it     { background: rgba(20,184,166,0.1);  color: #14b8a6; border-color: rgba(20,184,166,0.2); }
+      .exp-cat-tag.tag-risk   { background: rgba(239,68,68,0.1);   color: #ef4444; border-color: rgba(239,68,68,0.2); }
+      .exp-cat-tag.tag-admin  { background: rgba(99,102,241,0.1);  color: #6366f1; border-color: rgba(99,102,241,0.2); }
+      .exp-cat-tag.tag-biz    { background: rgba(236,72,153,0.1);  color: #ec4899; border-color: rgba(236,72,153,0.2); }
+      .exp-cat-tag.tag-design { background: rgba(245,158,11,0.1);  color: #f59e0b; border-color: rgba(245,158,11,0.2); }
+
+      .exp-desc-list {
+        padding-left: 20px;
+        font-size: 14px;
         color: var(--text-muted);
-        line-height: 1.75;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+      .exp-desc-list li { margin-bottom: 4px; }
+
+      .exp-tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .exp-tool {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--text-muted);
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-full);
+        padding: 3px 10px;
       }
 
       @media (max-width: 768px) {
         .exp-card { flex-direction: column; }
         .exp-image { flex: none; height: 220px; }
-        .exp-body { padding: 24px; }
+        .exp-image-placeholder { flex: none; height: 180px; }
+        .exp-body { flex: none; padding: 24px; }
       }
     </style>
   </head>
@@ -159,7 +241,7 @@
     <!-- Sub-page Nav -->
     <nav class="subpage-nav">
       <div class="subpage-nav-inner">
-        <a href="index.html#projects" class="subpage-back">
+        <a href="index.html#experience" class="subpage-back">
           <i class="uil uil-arrow-left"></i> Back to Portfolio
         </a>
         <a href="index.html" class="subpage-brand">EVAN.</a>
@@ -175,49 +257,44 @@
       <span class="section-label"><i class="uil uil-briefcase-alt"></i> Experience</span>
       <h1 class="section-title" style="margin-bottom:12px;">Work Experience</h1>
       <p class="section-sub" style="margin:0 auto;">
-        Hands-on IT experience from internships in manufacturing and automotive industries
+        Hands-on experience across UI/UX, web development, AI, IT risk, IT operations, data management, and business administration.
       </p>
     </div>
 
     <!-- Experience Cards -->
     <div class="exp-cards container">
 
-      <!-- Experience 1 -->
+      <!-- Experience 1: QUTAB -->
       <div class="exp-card reveal">
         <div class="exp-image">
-          <img src="assets/American Standart.jpg" alt="PT American Standard Indonesia (LIXIL Group)" />
+          <img src="assets/Gedung SCUI.webp" alt="PT Sinergi Cahaya Utama Indah — Gedung ZIS Indosat" />
         </div>
         <div class="exp-body">
-          <div class="exp-badge"><i class="uil uil-briefcase-alt"></i> IT Support &amp; Data Analyst</div>
-          <div class="exp-role">IT Support Intern</div>
-          <div class="exp-company">PT American Standard Indonesia (LIXIL Group)</div>
-          <div class="exp-period"><i class="uil uil-calendar-alt"></i> 2025</div>
-          <ul style="padding-left: 20px; font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-top: 8px;">
-            <li>Berkontribusi pada pengembangan AI Risk Analyzer melalui data preparation, evaluasi model, risk classification, dan pengembangan fitur aplikasi berbasis data.</li>
-            <li>Mengelola dan memproses data aplikasi menggunakan PostgreSQL serta REST API untuk mendukung kebutuhan sistem dan integrasi data.</li>
-            <li>Menganalisis dan mengklasifikasikan temuan risiko berdasarkan ISO/IEC 27001 dan NIST SP 800-30 serta menyusun hasil analisis secara terstruktur.</li>
-            <li>Membantu troubleshooting isu sertifikat HTTPS/SSL pada situs pemerintah dan menyelesaikan berbagai isu IT di 5 departemen lingkungan pabrik/gudang.</li>
-            <li>Turut menjadi panitia pendukung kegiatan pelatihan dan acara perusahaan: persiapan acara, koordinasi tim, dokumentasi foto, dan editing konten pasca-acara.</li>
+          <div class="exp-badge"><i class="uil uil-vector-square"></i> UI/UX &amp; Web Development</div>
+          <div class="exp-role">UI/UX &amp; Frontend Developer Intern</div>
+          <div class="exp-company">PT Sinergi Cahaya Utama Indah (Qutab) — Gedung ZIS Indosat</div>
+          <div class="exp-period"><i class="uil uil-calendar-alt"></i> December 2025 – March 2026</div>
+          <div class="exp-category-tags">
+            <span class="exp-cat-tag tag-uiux">UI/UX</span>
+            <span class="exp-cat-tag tag-web">Web Development</span>
+            <span class="exp-cat-tag tag-biz">Digital Business</span>
+          </div>
+          <ul class="exp-desc-list">
+            <li>Developed React.js web applications and dashboards, including affiliate dashboard, admin panel, referral system, and dynamic pricing modules to support business operations.</li>
+            <li>Contributed to the development of <a href="https://www.qurbantanpabatas.id/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">qurbantanpabatas.id</a> and <strong>scalev.id</strong> as mobile-first landing pages with responsive UI implementation.</li>
+            <li>Contributed to interface design through user flows, information architecture, wireframing, and stakeholder-driven design iterations.</li>
+            <li>Prepared business and technical documentation including flowcharts, organizational structure diagrams, and business process flows for the internship final report.</li>
           </ul>
-        </div>
-      </div>
-
-      <!-- Experience 2 -->
-      <div class="exp-card reveal">
-        <div class="exp-image">
-          <img src="assets/Gedung SCUI.webp" alt="PT Sinergi Cahaya Utama Indah — Gedung SCUI" />
-        </div>
-        <div class="exp-body">
-          <div class="exp-badge"><i class="uil uil-code-branch"></i> Frontend Web Developer</div>
-          <div class="exp-role">Frontend Developer Intern</div>
-          <div class="exp-company">PT Sinergi Cahaya Utama Indah (Qutab) — Gedung ZIZ Indosat</div>
-          <div class="exp-period"><i class="uil uil-calendar-alt"></i> 2024</div>
-          <ul style="padding-left: 20px; font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-top: 8px;">
-            <li>Mengembangkan dashboard dan web application menggunakan React.js, termasuk dashboard afiliasi, admin panel, sistem referral, dan dynamic pricing untuk mendukung kebutuhan bisnis.</li>
-            <li>Membangun platform <a href="https://www.qurbantanpabatas.id/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">qurbantanpabatas.id</a> dan <strong>scalev.id</strong> sebagai landing page mobile-first.</li>
-            <li>Menyusun materi laporan akhir magang: flowchart draw.io, struktur organisasi, dan diagram alur bisnis.</li>
-          </ul>
-          <div style="margin-top:16px;">
+          <div class="exp-tools">
+            <span class="exp-tool">React.js</span>
+            <span class="exp-tool">Vite</span>
+            <span class="exp-tool">JavaScript</span>
+            <span class="exp-tool">HTML/CSS</span>
+            <span class="exp-tool">Figma</span>
+            <span class="exp-tool">Draw.io</span>
+            <span class="exp-tool">Responsive Design</span>
+          </div>
+          <div style="margin-top:20px;">
             <a href="https://www.qurbantanpabatas.id/" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13px;padding:8px 16px;">
               Visit Qurban Tanpa Batas <i class="uil uil-external-link-alt"></i>
             </a>
@@ -225,23 +302,112 @@
         </div>
       </div>
 
-      <!-- Experience 3 -->
+      <!-- Experience 2: American Standard -->
       <div class="exp-card reveal">
         <div class="exp-image">
-          <img src="assets/sjm-cimanggis.jpg" alt="PT Toyota Setiajaya Mobilindo" />
+          <img src="assets/American Standart.jpg" alt="PT American Standard Indonesia (LIXIL Group)" />
         </div>
         <div class="exp-body">
-          <div class="exp-badge"><i class="uil uil-database"></i> SAP Data Management</div>
-          <div class="exp-role">Records Digitalization Intern</div>
-          <div class="exp-company">PT Toyota Setiajaya Mobilindo</div>
-          <div class="exp-period"><i class="uil uil-calendar-alt"></i> 2023</div>
-          <ul style="padding-left: 20px; font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-top: 8px;">
-            <li>Melakukan input, pembaruan, dan pengelolaan master data pada sistem SAP dengan memperhatikan akurasi dan konsistensi data.</li>
-            <li>Melakukan data cleansing dan validasi untuk meningkatkan akurasi dan konsistensi master data.</li>
-            <li>Mendigitalisasi dan mengonversi arsip fisik ke dalam sistem SAP untuk meningkatkan keteraturan dan aksesibilitas data.</li>
+          <div class="exp-badge"><i class="uil uil-server"></i> IT Support &amp; Digital Solutions</div>
+          <div class="exp-role">IT Support Intern</div>
+          <div class="exp-company">PT American Standard Indonesia (LIXIL Group)</div>
+          <div class="exp-period"><i class="uil uil-calendar-alt"></i> August 2025 – December 2025</div>
+          <div class="exp-category-tags">
+            <span class="exp-cat-tag tag-it">IT Support</span>
+            <span class="exp-cat-tag tag-ai">AI Development</span>
+            <span class="exp-cat-tag tag-risk">IT Risk</span>
+            <span class="exp-cat-tag tag-web">Web Development</span>
+          </div>
+          <ul class="exp-desc-list">
+            <li>Contributed to the AI Security Risk Analyzer, including data preparation, model evaluation, security risk classification, and feature development based on ISO/IEC 27001 and NIST SP 800-30 frameworks.</li>
+            <li>Analyzed and structured security findings into actionable risk information to support security risk assessment and reporting.</li>
+            <li>Managed IT asset inventory, disposal inspection, HDD backup and sorting, data erasure, CCTV warehouse HDD management, and asset auction/disposal administration.</li>
+            <li>Developed Web Inventory Tinta and Web Inventory Disposal System as internal web tools to support IT asset and inventory operations and reduce reliance on manual processes.</li>
+            <li>Worked with PostgreSQL and REST APIs to support application data management and system integration.</li>
+            <li>Provided troubleshooting support across multiple departments, including HTTPS/SSL certificate issues, printers, LAN configuration, attendance machines, and CoreTax user ID issues.</li>
+            <li>Supported company training events through event preparation, team coordination, photo documentation, and post-event content editing.</li>
           </ul>
+          <div class="exp-tools">
+            <span class="exp-tool">PostgreSQL</span>
+            <span class="exp-tool">REST API</span>
+            <span class="exp-tool">Python</span>
+            <span class="exp-tool">JavaScript</span>
+            <span class="exp-tool">Windows</span>
+            <span class="exp-tool">LAN/Network</span>
+            <span class="exp-tool">ISO 27001</span>
+            <span class="exp-tool">NIST SP 800-30</span>
+            <span class="exp-tool">IT Asset Management</span>
+          </div>
         </div>
       </div>
+
+      <!-- Experience 3: PT Square Gate One -->
+      <div class="exp-card reveal">
+        <div class="exp-image">
+          <img src="assets/cybersecurity-gate-one.jpg" alt="PT Square Gate One — IT Risk &amp; Cybersecurity" />
+        </div>
+        <div class="exp-body">
+          <div class="exp-badge" style="background:rgba(59,130,246,0.1);color:#3b82f6;"><i class="uil uil-shield-check"></i> IT Risk &amp; Technology Management</div>
+          <div class="exp-role">IT Risk Analyst &amp; Technology Project Contributor</div>
+          <div class="exp-company">PT Square Gate One</div>
+          <div class="exp-period"><i class="uil uil-calendar-alt"></i> Professional Project</div>
+          <div class="exp-category-tags">
+            <span class="exp-cat-tag tag-it">IT Governance</span>
+            <span class="exp-cat-tag tag-risk">AI &amp; Risk</span>
+            <span class="exp-cat-tag tag-biz">Business Process</span>
+          </div>
+          <ul class="exp-desc-list">
+            <li>Contributed to technology-focused initiatives involving IT risk analysis, governance, business process improvement, and digital solutions.</li>
+            <li>Applied analytical thinking and technology skills to support risk identification, documentation, and process improvement.</li>
+            <li>Supported technology-driven business needs through data analysis and structured documentation of IT processes and requirements.</li>
+            <li>Collaborated across technology and business perspectives to connect technical solutions with operational and management needs.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="exp-tool">AI &amp; Risk Analysis</span>
+            <span class="exp-tool">IT Governance</span>
+            <span class="exp-tool">Business Process</span>
+            <span class="exp-tool">Documentation</span>
+            <span class="exp-tool">Data Analysis</span>
+            <span class="exp-tool">Technology Management</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Experience 4: Toyota -->
+      <div class="exp-card reveal">
+        <div class="exp-image">
+          <img src="assets/sjm-cimanggis.jpg" alt="PT Toyota Setiajaya Mobilindo Cibubur" />
+        </div>
+        <div class="exp-body">
+          <div class="exp-badge"><i class="uil uil-file-alt"></i> Data &amp; Administrative Operations</div>
+          <div class="exp-role">Records Digitalization Intern</div>
+          <div class="exp-company">PT Toyota Setiajaya Mobilindo Cibubur</div>
+          <div class="exp-period"><i class="uil uil-calendar-alt"></i> 2022</div>
+          <div class="exp-category-tags">
+            <span class="exp-cat-tag tag-admin">Data &amp; Administration</span>
+            <span class="exp-cat-tag tag-biz">Business Operations</span>
+            <span class="exp-cat-tag tag-it">IT Support</span>
+          </div>
+          <ul class="exp-desc-list">
+            <li>Performed SAP master data input, updates, and management for sales and service records with a focus on accuracy and data consistency.</li>
+            <li>Conducted data cleansing and validation to improve master data reliability and integrity across operational workflows.</li>
+            <li>Digitalized and converted physical document archives into digital records to improve data accessibility and document organization.</li>
+            <li>Supported administrative recapitulation, maintained iCare dashboard data, and coordinated documentation across customer, sales, and administrative workflows.</li>
+            <li>Provided basic IT support for printer and LAN issues in the operational environment.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="exp-tool">SAP</span>
+            <span class="exp-tool">Microsoft Excel</span>
+            <span class="exp-tool">Microsoft Word</span>
+            <span class="exp-tool">Google Sheets</span>
+            <span class="exp-tool">Data Entry</span>
+            <span class="exp-tool">Data Validation</span>
+            <span class="exp-tool">Digital Archiving</span>
+          </div>
+        </div>
+      </div>
+
 
     </div>
 
@@ -269,7 +435,7 @@
       // Scroll reveal
       const obs = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.08 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     </script>
   </body>

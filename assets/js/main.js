@@ -1,12 +1,12 @@
 /* =============================================
    EVAN PORTFOLIO — MAIN JAVASCRIPT
+   Multi-Role Technology Portfolio 2026
    ============================================= */
 
 /* ----- DARK / LIGHT MODE ----- */
 const themeToggle = document.getElementById('themeToggle');
 const root = document.documentElement;
 
-// Init from localStorage
 const savedTheme = localStorage.getItem('theme') || 'light';
 root.setAttribute('data-theme', savedTheme);
 
@@ -21,14 +21,15 @@ if (themeToggle) {
 
 /* ----- NAVBAR SCROLL EFFECT ----- */
 const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 30) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+}
 
 /* ----- HAMBURGER MENU ----- */
 const hamburger = document.getElementById('hamburger');
@@ -40,7 +41,6 @@ if (hamburger && navMobile) {
     navMobile.classList.toggle('open');
   });
 
-  // Close on link click
   navMobile.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
@@ -49,7 +49,7 @@ if (hamburger && navMobile) {
   });
 }
 
-/* ----- ACTIVE NAV LINK (IntersectionObserver) ----- */
+/* ----- ACTIVE NAV LINK ----- */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
@@ -66,7 +66,7 @@ const sectionObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.35 }
+  { threshold: 0.3 }
 );
 
 sections.forEach(section => sectionObserver.observe(section));
@@ -74,16 +74,27 @@ sections.forEach(section => sectionObserver.observe(section));
 /* ----- TYPING EFFECT ----- */
 if (typeof Typed !== 'undefined') {
   new Typed('.typedText', {
-    strings: ['an Informatics Graduate', 'a Data & Risk Analyst', 'a Frontend Developer', 'an IT Support Specialist'],
+    strings: [
+      'UI/UX Designer',
+      'Product Designer',
+      'Web Developer',
+      'Front-End Developer',
+      'AI Developer',
+      'Prompt Engineer',
+      'IT Risk Analyst',
+      'IT Governance',
+      'IT Support Specialist',
+      'Technology Professional'
+    ],
     loop: true,
-    typeSpeed: 80,
-    backSpeed: 50,
-    backDelay: 2000,
+    typeSpeed: 70,
+    backSpeed: 40,
+    backDelay: 1800,
     smartBackspace: true,
   });
 }
 
-/* ----- SCROLL REVEAL (IntersectionObserver) ----- */
+/* ----- SCROLL REVEAL ----- */
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
@@ -92,7 +103,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+  { threshold: 0.08, rootMargin: '0px 0px -50px 0px' }
 );
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
@@ -115,7 +126,7 @@ function animateCounter(el) {
       current = target;
       clearInterval(timer);
     }
-    const display = Number.isInteger(target) ? Math.floor(current) : current.toFixed(1);
+    const display = Number.isInteger(target) ? Math.floor(current) : current.toFixed(2);
     el.textContent = prefix + display + suffix;
   }, step);
 }
@@ -136,7 +147,7 @@ document.querySelectorAll('.stat-num[data-target]').forEach(el => {
   counterObserver.observe(el);
 });
 
-/* ----- SMOOTH SCROLL for anchor links ----- */
+/* ----- SMOOTH SCROLL ----- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
@@ -151,10 +162,39 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* ----- CLOSE MOBILE NAV ON OUTSIDE CLICK ----- */
 document.addEventListener('click', (e) => {
-  if (navMobile && hamburger) {
+  if (navMobile && hamburger && navbar) {
     if (!navbar.contains(e.target) && !navMobile.contains(e.target)) {
       hamburger.classList.remove('open');
       navMobile.classList.remove('open');
     }
   }
 });
+
+/* ----- PROJECT FILTER ----- */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.filterable-card');
+
+if (filterBtns.length > 0) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      projectCards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        if (filter === 'all' || tags.includes(filter)) {
+          card.style.display = '';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(16px)';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
