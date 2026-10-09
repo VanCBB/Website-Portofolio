@@ -170,6 +170,60 @@ document.addEventListener('click', (e) => {
   }
 });
 
+/* ----- ABOUT PHOTO SCROLL FOLLOW (only within #about section) ----- */
+(function () {
+  const aboutSection  = document.getElementById('about');
+  const aboutInner    = aboutSection  ? aboutSection.querySelector('.about-inner')     : null;
+  const imageWrap     = aboutInner    ? aboutInner.querySelector('.about-image-wrap')  : null;
+  const navbar        = document.getElementById('navbar');
+
+  if (!aboutSection || !aboutInner || !imageWrap) return;
+
+  function getNavH() {
+    return navbar ? navbar.offsetHeight : 80;
+  }
+
+  function update() {
+    const navH      = getNavH();
+    const OFFSET    = navH + 24;          // jarak dari atas viewport ke posisi sticky
+    const MARGIN    = 24;                 // jarak aman dari batas bawah section
+
+    const innerRect = aboutInner.getBoundingClientRect();
+    const imgH      = imageWrap.offsetHeight;
+
+    // Seberapa jauh kita sudah scroll masuk ke dalam about-inner
+    // 0 = tepat di atas inner, positif = sudah scroll masuk
+    const scrolledPast = OFFSET - innerRect.top;
+
+    // Batas maksimum: foto tidak boleh melewati batas bawah about-inner
+    const maxTranslate = innerRect.height - imgH - MARGIN;
+
+    let translateY = 0;
+
+    if (scrolledPast <= 0) {
+      // Belum masuk / tepat di atas: foto di posisi awal
+      translateY = 0;
+    } else if (scrolledPast >= maxTranslate && maxTranslate > 0) {
+      // Sudah mencapai batas bawah: foto berhenti (tidak overlap ke section lain)
+      translateY = maxTranslate;
+    } else {
+      // Dalam rentang about section: ikut scroll 1:1
+      translateY = scrolledPast;
+    }
+
+    imageWrap.style.transform = `translateY(${translateY}px)`;
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  // Run on load setelah font/image loaded agar offsetHeight akurat
+  if (document.readyState === 'complete') {
+    update();
+  } else {
+    window.addEventListener('load', update);
+  }
+})();
+
 /* ----- PROJECT FILTER ----- */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.filterable-card');
