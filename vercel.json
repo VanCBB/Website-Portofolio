@@ -1,6 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/project",          "destination": "/project.html" },
+    { "source": "/certificate",       "destination": "/certificate.html" },
+    { "source": "/work-experience",   "destination": "/work-experience.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
